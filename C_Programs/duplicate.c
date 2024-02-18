@@ -1,22 +1,24 @@
-#include <stdio.h>
-
-void findDuplicates(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (arr[i] == arr[j]) {
-                printf("Duplicate Element: %d\n", arr[i]);
-                break;
-            }
-        }
-    }
+#include<stdio.h>
+int main()
+{
+	int n,count=0;
+	int a[]={3,6,8,8,10,12,15,15,15,20};
+	n=sizeof(a)/sizeof(a[0]);
+	printf("Duplicate elements are: \n");
+	int last_duplicate=0;
+	for(int i=0;i<n-1;i++)
+	{
+		if(a[i]==a[i+1]&&a[i]!=last_duplicate)
+		{
+			
+			printf("%d\n",a[i]);
+			last_duplicate=a[i];
+			
+			
+		}
+		
+	}
+	return 0;
 }
 
-int main() {
-    int arr[] = {1, 2, 3, 2, 4, 5, 3};
-    int size = sizeof(arr) / sizeof(arr[0]);
-
-    findDuplicates(arr, size);
-
-    return 0;
-}
 
